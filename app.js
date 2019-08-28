@@ -12,3 +12,14 @@ var connection = mysql.createConnection({
     database: "ramozon_db"
   });
   
+  connection.connect(function(err) {
+    if (err) throw err;
+
+    start();
+  });
+  
+  start = function(){
+    inquirer.prompt({
+        
+    })
+  }
