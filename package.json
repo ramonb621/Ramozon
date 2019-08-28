@@ -1,0 +1,19 @@
+{
+  "name": "ramozon",
+  "version": "1.0.0",
+  "description": "amazon-like app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramonb621/Ramozon.git"
+  },
+  "author": "Ramon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ramonb621/Ramozon/issues"
+  },
+  "homepage": "https://github.com/ramonb621/Ramozon#readme"
+}
