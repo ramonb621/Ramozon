@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS ramzon_db;
+DROP DATABASE IF EXISTS ramozon_db;
 
-CREATE DATABASE ramzon_db;
+CREATE DATABASE ramozon_db;
 
 USE ramozon_db;
 
@@ -23,7 +23,7 @@ INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("slim jims 32 pk", "food", 9.99, 10);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
-VALUES ("gillete fusion 5 replacement razors 12pk", 24.99, 12);
+VALUES ("gillete fusion 5 replacement razors 12pk", "hygiene", 24.99, 12);
 
 INSERT INTO products (product_name, department_name, price, stock_quantity)
 VALUES ("hanes men's ankle-high socks 6 pk", "clothing", 14.99, 14);
