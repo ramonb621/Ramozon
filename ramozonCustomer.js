@@ -29,56 +29,49 @@ start = function(){
     }
     // return choiceArray;
   
-  // inquirer
-  // .prompt([
-  //   {
-  //     name:"inventory",
-  //     type:"rawlist",
-  //     choices: function(){
-  //       var choiceArray = [];
-  //       for (let i = 0; results.length; i++){
-  //         choiceArray.push(results[i].position, results[i].product_name, results[i].price);
-  //       }
-  //       return choiceArray;
-  //     },
-  //     message: "Select the product you'd like to buy by matching the product ID."
-  //   },
-  //   {
-  //     name:"buy",
-  //     type:"input",
-  //     message:"How many would you like to buy?"
-  //   }
-  // ])
-  // .then(function(answer){
-  //   var chosenItem;
-  //   for(let i = 0; i < results.length; i++){
-  //     if(results[i].product_name === answer.choice){
-  //       chosenItem = res[i];
-  //     }
-  //   }
-  //   if(chosenItem.sell_price === parseInt(answer.price)){
-  //     connection.query(
-  //       "UPDATE products SET ? WHERE ?",
-  //       [
-  //         {
-  //           sell_price: answer.price
-  //         },
-  //         {
-  //           position: chosenItem.position
-  //         }
-  //     ],
-  //     function(error){
-  //       if (error) throw error;
-  //       console.log("Purchase complete!");
-  //       start();
-  //     }
-  //   )
-  // }
-  // else{
-  //   console.log("Your transaction was unsuccessful. Please try again at a later time.");
-  //   start();
-  // }
-  // })
+  inquirer
+  .prompt([
+    {
+      name:"inventory",
+      type:"input",
+      message: "Select the product you'd like to buy by matching the product ID."
+    },
+    {
+      name:"buy",
+      type:"input",
+      message:"How many would you like to buy?"
+    }
+  ])
+  .then(function(answer){
+    var chosenItem;
+    for(let i = 0; i < results.length; i++){
+      if(results[i].item_id === answer.choice){
+        chosenItem = res[i];
+      }
+    }
+    if(chosenItem.sell_price === parseInt(answer.price)){
+      connection.query(
+        "UPDATE products SET ? WHERE ?",
+        [
+          {
+            sell_price: answer.price
+          },
+          {
+            position: chosenItem.position
+          }
+      ],
+      function(error){
+        if (error) throw error;
+        console.log("Purchase complete!");
+        start();
+      }
+    )
+  }
+  else{
+    console.log("Your transaction was unsuccessful. Please try again at a later time.");
+    start();
+  }
+  })
   connection.end();
   })
 }
