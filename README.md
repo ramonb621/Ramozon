@@ -7,3 +7,6 @@ This is a node and sql app that simulates a CLI storefront somewhat similar to a
 
 ## What's the point?
 It showcases my understanding of what's required to make sql and node work together
+
+## Link to demo
+https://drive.google.com/file/d/1jS7B4VmwVW-Fhbgwp28Xo2JKFBQEgcxJ/view
